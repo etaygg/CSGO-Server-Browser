@@ -1,0 +1,33 @@
+body {
+    background-color: #4B5643;
+}
+
+.serverList {
+    background-color: #3D4437;
+    color: #D8DEC7;
+    
+}
+.lightBorder {
+    border: 1px solid #9EA48F;
+}
+.darkBorder {
+    border: 1px solid #2A2F26;
+}
+hr {
+    border: 1px solid #ffffff;
+}
+.btnConnect {
+    background-color: #9EA48F;
+    color: #2A2F26;
+    border-bottom: 2px solid #2A2F26;
+    border-top: 2px solid #9EA48F;
+}
+.btnConnect:hover {
+    background-color: #67745C;
+    color: #D8DEC7;
+    border-bottom: 2px solid #2A2F26;
+    border-top: 2px solid #67745C;
+}
+.table-head{
+    gap: 8rem;
+}

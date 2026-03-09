@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+  crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="styles.css">
+  
+  <body>
+    <div class="container d-flex justify-content-between py-4 align-items-center">
+      <h1 class="text-center">CSGO Server List</h1>
+      <div>
+      <a href="settings.html" class="btn btnConnect">Settings</a>
+      <a href="about.html" class="btn btnConnect">About</a>
+      </div>
+    </div>
+    <div class="serverList container lightBorder darkBorder d-flex flex-column gap-3 p-4" id="serverList">
+      <table>
+        <thead>
+          <tr class="tableHeader d-flex justify-content-center table-head ">
+            <th>Map</th>
+            <th>Server Name</th> 
+            <th>Players</th>
+          </tr>
+          <tbody>
+            <td>
+              <hr>
+                
+              <div class="servers col d-flex flex-column gap-3" id="servers">
+                
+              
+              </div>
+              </div>
+            <button class="btn btnConnect" id="loadMoreBtn" onclick="renderNextBatch()">show more</button>
+            </tr>
+          </tbody>
+          </table>
+          <div class="errorMsg alert d-none" id="alerts"></div>
+        </div>
+        
+        
+        
+        <script src="neutralino.js"></script>
+        <script src="js/main.js"></script>
+      </body>
+      <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+      ></script>
+      
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+      ></script>
+      </html>
