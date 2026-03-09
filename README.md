@@ -24,7 +24,7 @@ Measures latency (ping) for each server individually and prioritizes servers wit
 ## Getting Started
 
 **Download**  
-Download the latest release from the **Releases** tab.
+Download the latest release from the **Releases** tab and extract the ZIP file.
 
 **Steam Web API Key**  
 Create a personal API key from the [Steam Developer Portal](https://steamcommunity.com/dev/apikey) and paste it into the **Settings** section in the app.
