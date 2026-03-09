@@ -3,6 +3,7 @@
 An open-source desktop application designed to restore the ability to browse and connect to community servers in the **Legacy version of Counter-Strike: Global Offensive**.
 
 After Valve transitioned from **CS:GO** to **CS2**, the built-in server browser stopped functioning properly for legacy builds. This project provides a lightweight alternative that allows players to discover and join community servers again.
+
 <img width="1920" height="1009" alt="{10054873-E089-4557-AAD2-F3C637F5380D}" src="https://github.com/user-attachments/assets/4ad8dd9b-d788-4a86-a3d2-fc856334b9d6" />
 
 ---
