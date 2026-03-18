@@ -32,6 +32,6 @@ Create a personal API key from the [Steam Developer Portal](https://steamcommuni
 ---
 
 ## To Be Added
-
-- Ping display system  
+ 
 - Server search and filtering
+- favorites tab
