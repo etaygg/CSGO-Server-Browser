@@ -4,7 +4,7 @@ const batchSize = Number(localStorage.getItem('batchSize')) || 20;
 
 function saveSettings() {
     const alertbox = document.getElementById('alert');
-    const timeout = 500;   
+    const timeout = 500;
     const key = document.getElementById('apikey').value;
     const count = document.getElementById('serverCount').value;
 
@@ -13,7 +13,7 @@ function saveSettings() {
     alertbox.classList.remove('d-none');
     alertbox.classList.add('alert-success');
     alertbox.textContent = "Settings saved successfully!";
-    setTimeout(() => { 
+    setTimeout(() => {
         window.location.href = 'index.html';
     }, timeout);
 }
@@ -44,19 +44,53 @@ async function fetchServers() {
         alertBox.textContent = "Error fetching servers. Please check your API key and try again.";
     }
 }
+async function updateServerPing(addr, serverID) {
+    try {
+        const ip = addr.split(':')[0]
+        const command = await Neutralino.os.execCommand(`ping -n 1 ${ip}`)
+        const match = command.stdOut.match(/time[=<](\d+)ms/)
+        const pingValue = match ? match[1] + "ms" : "N/A"
+
+
+        const el = document.getElementById(`ping-${serverID}`)
+        // el.classList.remove("bg-succsess" , "bg-warning", "bg-danger", "bg-secondary")
+        if (el) {
+            const rawMs = parseInt(match[1])
+            el.textContent = rawMs + 'ms'
+            if(rawMs < 100){
+                el.classList.add("bg-success")
+            }else{
+                el.classList.add("bg-warning")
+            }
+        }
+    }
+    catch (e) {
+        el.textContent = "ping faild"
+        el.classList.add("bg-danger")
+        console.error("ping faild for " + addr, e)
+    }
+
+}
 function renderNextBatch() {
     const serverList = document.getElementById('servers');
+
 
     const batch = allServers.slice(currentIndex, currentIndex + batchSize);
 
     batch.forEach(server => {
+        const serverID = server.addr.replace(/[:.]/g, '-')
         const html = `
             
-                <b class="text-center">[${server.map}] ${server.name} | Players: ${server.players}/${server.max_players}</b>
+              <b class="text-center">[${server.map}] ${server.name} | Players: ${server.players}/${server.max_players}</b>
+                <div class="badge" id="ping-${serverID}"></div>
+                </div>
                 <button class="btnConnect p-2 fw-bold" onclick="connect('${server.addr}')">connect</button>
                 <hr>
+
+
             `;
         serverList.insertAdjacentHTML('beforeend', html);
+        updateServerPing(server.addr , serverID)
     });
 
     currentIndex += batchSize;

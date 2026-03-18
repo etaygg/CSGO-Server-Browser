@@ -31,3 +31,7 @@ hr {
 .table-head{
     gap: 8rem;
 }
+.title {
+    font-weight: bold;
+    color: #D8DEC7;
+}
